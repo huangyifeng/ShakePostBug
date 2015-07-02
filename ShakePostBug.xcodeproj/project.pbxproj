@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C446AB1F1B457CEA00DCD414 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB1E1B457CEA00DCD414 /* main.m */; };
+		C446AB221B457CEA00DCD414 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB211B457CEA00DCD414 /* AppDelegate.m */; };
+		C446AB251B457CEA00DCD414 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB241B457CEA00DCD414 /* ViewController.m */; };
+		C446AB281B457CEA00DCD414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C446AB261B457CEA00DCD414 /* Main.storyboard */; };
+		C446AB2A1B457CEA00DCD414 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C446AB291B457CEA00DCD414 /* Images.xcassets */; };
+		C446AB2D1B457CEA00DCD414 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C446AB2B1B457CEA00DCD414 /* LaunchScreen.xib */; };
+		C446AB391B457CEA00DCD414 /* ShakePostBugTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB381B457CEA00DCD414 /* ShakePostBugTests.m */; };
+		C446AB451B459B9B00DCD414 /* UIViewController+ShakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB441B459B9B00DCD414 /* UIViewController+ShakeSupport.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C446AB331B457CEA00DCD414 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C446AB111B457CEA00DCD414 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C446AB181B457CEA00DCD414;
+			remoteInfo = ShakePostBug;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C446AB191B457CEA00DCD414 /* ShakePostBug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakePostBug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C446AB1D1B457CEA00DCD414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C446AB1E1B457CEA00DCD414 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C446AB201B457CEA00DCD414 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C446AB211B457CEA00DCD414 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C446AB231B457CEA00DCD414 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C446AB241B457CEA00DCD414 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C446AB271B457CEA00DCD414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C446AB291B457CEA00DCD414 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C446AB2C1B457CEA00DCD414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C446AB321B457CEA00DCD414 /* ShakePostBugTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakePostBugTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C446AB371B457CEA00DCD414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C446AB381B457CEA00DCD414 /* ShakePostBugTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShakePostBugTests.m; sourceTree = "<group>"; };
+		C446AB431B459B9B00DCD414 /* UIViewController+ShakeSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ShakeSupport.h"; sourceTree = "<group>"; };
+		C446AB441B459B9B00DCD414 /* UIViewController+ShakeSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ShakeSupport.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C446AB161B457CEA00DCD414 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C446AB2F1B457CEA00DCD414 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C446AB101B457CEA00DCD414 = {
+			isa = PBXGroup;
+			children = (
+				C446AB1B1B457CEA00DCD414 /* ShakePostBug */,
+				C446AB351B457CEA00DCD414 /* ShakePostBugTests */,
+				C446AB1A1B457CEA00DCD414 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C446AB1A1B457CEA00DCD414 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C446AB191B457CEA00DCD414 /* ShakePostBug.app */,
+				C446AB321B457CEA00DCD414 /* ShakePostBugTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C446AB1B1B457CEA00DCD414 /* ShakePostBug */ = {
+			isa = PBXGroup;
+			children = (
+				C446AB421B4598F300DCD414 /* framework */,
+				C446AB201B457CEA00DCD414 /* AppDelegate.h */,
+				C446AB211B457CEA00DCD414 /* AppDelegate.m */,
+				C446AB231B457CEA00DCD414 /* ViewController.h */,
+				C446AB241B457CEA00DCD414 /* ViewController.m */,
+				C446AB261B457CEA00DCD414 /* Main.storyboard */,
+				C446AB291B457CEA00DCD414 /* Images.xcassets */,
+				C446AB2B1B457CEA00DCD414 /* LaunchScreen.xib */,
+				C446AB1C1B457CEA00DCD414 /* Supporting Files */,
+			);
+			path = ShakePostBug;
+			sourceTree = "<group>";
+		};
+		C446AB1C1B457CEA00DCD414 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C446AB1D1B457CEA00DCD414 /* Info.plist */,
+				C446AB1E1B457CEA00DCD414 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C446AB351B457CEA00DCD414 /* ShakePostBugTests */ = {
+			isa = PBXGroup;
+			children = (
+				C446AB381B457CEA00DCD414 /* ShakePostBugTests.m */,
+				C446AB361B457CEA00DCD414 /* Supporting Files */,
+			);
+			path = ShakePostBugTests;
+			sourceTree = "<group>";
+		};
+		C446AB361B457CEA00DCD414 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C446AB371B457CEA00DCD414 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C446AB421B4598F300DCD414 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				C446AB431B459B9B00DCD414 /* UIViewController+ShakeSupport.h */,
+				C446AB441B459B9B00DCD414 /* UIViewController+ShakeSupport.m */,
+			);
+			name = framework;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C446AB181B457CEA00DCD414 /* ShakePostBug */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C446AB3C1B457CEA00DCD414 /* Build configuration list for PBXNativeTarget "ShakePostBug" */;
+			buildPhases = (
+				C446AB151B457CEA00DCD414 /* Sources */,
+				C446AB161B457CEA00DCD414 /* Frameworks */,
+				C446AB171B457CEA00DCD414 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShakePostBug;
+			productName = ShakePostBug;
+			productReference = C446AB191B457CEA00DCD414 /* ShakePostBug.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C446AB311B457CEA00DCD414 /* ShakePostBugTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C446AB3F1B457CEA00DCD414 /* Build configuration list for PBXNativeTarget "ShakePostBugTests" */;
+			buildPhases = (
+				C446AB2E1B457CEA00DCD414 /* Sources */,
+				C446AB2F1B457CEA00DCD414 /* Frameworks */,
+				C446AB301B457CEA00DCD414 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C446AB341B457CEA00DCD414 /* PBXTargetDependency */,
+			);
+			name = ShakePostBugTests;
+			productName = ShakePostBugTests;
+			productReference = C446AB321B457CEA00DCD414 /* ShakePostBugTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C446AB111B457CEA00DCD414 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = aimob;
+				TargetAttributes = {
+					C446AB181B457CEA00DCD414 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					C446AB311B457CEA00DCD414 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = C446AB181B457CEA00DCD414;
+					};
+				};
+			};
+			buildConfigurationList = C446AB141B457CEA00DCD414 /* Build configuration list for PBXProject "ShakePostBug" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C446AB101B457CEA00DCD414;
+			productRefGroup = C446AB1A1B457CEA00DCD414 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C446AB181B457CEA00DCD414 /* ShakePostBug */,
+				C446AB311B457CEA00DCD414 /* ShakePostBugTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C446AB171B457CEA00DCD414 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C446AB281B457CEA00DCD414 /* Main.storyboard in Resources */,
+				C446AB2D1B457CEA00DCD414 /* LaunchScreen.xib in Resources */,
+				C446AB2A1B457CEA00DCD414 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C446AB301B457CEA00DCD414 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C446AB151B457CEA00DCD414 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C446AB251B457CEA00DCD414 /* ViewController.m in Sources */,
+				C446AB221B457CEA00DCD414 /* AppDelegate.m in Sources */,
+				C446AB1F1B457CEA00DCD414 /* main.m in Sources */,
+				C446AB451B459B9B00DCD414 /* UIViewController+ShakeSupport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C446AB2E1B457CEA00DCD414 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C446AB391B457CEA00DCD414 /* ShakePostBugTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C446AB341B457CEA00DCD414 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C446AB181B457CEA00DCD414 /* ShakePostBug */;
+			targetProxy = C446AB331B457CEA00DCD414 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C446AB261B457CEA00DCD414 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C446AB271B457CEA00DCD414 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C446AB2B1B457CEA00DCD414 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C446AB2C1B457CEA00DCD414 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C446AB3A1B457CEA00DCD414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C446AB3B1B457CEA00DCD414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C446AB3D1B457CEA00DCD414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ShakePostBug/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C446AB3E1B457CEA00DCD414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ShakePostBug/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C446AB401B457CEA00DCD414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ShakePostBugTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShakePostBug.app/ShakePostBug";
+			};
+			name = Debug;
+		};
+		C446AB411B457CEA00DCD414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ShakePostBugTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShakePostBug.app/ShakePostBug";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C446AB141B457CEA00DCD414 /* Build configuration list for PBXProject "ShakePostBug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C446AB3A1B457CEA00DCD414 /* Debug */,
+				C446AB3B1B457CEA00DCD414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C446AB3C1B457CEA00DCD414 /* Build configuration list for PBXNativeTarget "ShakePostBug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C446AB3D1B457CEA00DCD414 /* Debug */,
+				C446AB3E1B457CEA00DCD414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C446AB3F1B457CEA00DCD414 /* Build configuration list for PBXNativeTarget "ShakePostBugTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C446AB401B457CEA00DCD414 /* Debug */,
+				C446AB411B457CEA00DCD414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C446AB111B457CEA00DCD414 /* Project object */;
+}
