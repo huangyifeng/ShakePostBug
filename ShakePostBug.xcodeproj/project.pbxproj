@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BBB889FB1B62146800354171 /* DrawBugController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB889FA1B62146800354171 /* DrawBugController.m */; };
+		BBB889FD1B6219A100354171 /* DrawBugController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB889FC1B6219A100354171 /* DrawBugController.xib */; };
 		C446AB1F1B457CEA00DCD414 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB1E1B457CEA00DCD414 /* main.m */; };
 		C446AB221B457CEA00DCD414 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB211B457CEA00DCD414 /* AppDelegate.m */; };
 		C446AB251B457CEA00DCD414 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB241B457CEA00DCD414 /* ViewController.m */; };
@@ -28,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BBB889F91B62146800354171 /* DrawBugController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBugController.h; sourceTree = "<group>"; };
+		BBB889FA1B62146800354171 /* DrawBugController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBugController.m; sourceTree = "<group>"; };
+		BBB889FC1B6219A100354171 /* DrawBugController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawBugController.xib; sourceTree = "<group>"; };
 		C446AB191B457CEA00DCD414 /* ShakePostBug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakePostBug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C446AB1D1B457CEA00DCD414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C446AB1E1B457CEA00DCD414 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -128,6 +133,9 @@
 			children = (
 				C446AB431B459B9B00DCD414 /* UIViewController+ShakeSupport.h */,
 				C446AB441B459B9B00DCD414 /* UIViewController+ShakeSupport.m */,
+				BBB889F91B62146800354171 /* DrawBugController.h */,
+				BBB889FA1B62146800354171 /* DrawBugController.m */,
+				BBB889FC1B6219A100354171 /* DrawBugController.xib */,
 			);
 			name = framework;
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 			files = (
 				C446AB281B457CEA00DCD414 /* Main.storyboard in Resources */,
 				C446AB2D1B457CEA00DCD414 /* LaunchScreen.xib in Resources */,
+				BBB889FD1B6219A100354171 /* DrawBugController.xib in Resources */,
 				C446AB2A1B457CEA00DCD414 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +244,7 @@
 				C446AB251B457CEA00DCD414 /* ViewController.m in Sources */,
 				C446AB221B457CEA00DCD414 /* AppDelegate.m in Sources */,
 				C446AB1F1B457CEA00DCD414 /* main.m in Sources */,
+				BBB889FB1B62146800354171 /* DrawBugController.m in Sources */,
 				C446AB451B459B9B00DCD414 /* UIViewController+ShakeSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +440,7 @@
 				C446AB3E1B457CEA00DCD414 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C446AB3F1B457CEA00DCD414 /* Build configuration list for PBXNativeTarget "ShakePostBugTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +449,7 @@
 				C446AB411B457CEA00DCD414 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

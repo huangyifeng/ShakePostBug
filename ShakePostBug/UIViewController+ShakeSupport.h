@@ -10,4 +10,7 @@
 
 @interface UIViewController (ShakeSupport)
 
+- (void)setShakeHandler:(void(^)(void))actionHandler;
+
+
 @end
