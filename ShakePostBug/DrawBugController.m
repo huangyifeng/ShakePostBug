@@ -11,11 +11,18 @@
 @interface DrawBugController ()
 
 //@property(nonatomic, assign)CGPoint lastPoint;
-@property(nonatomic, strong)IBOutlet UIImageView *imageView;
+@property(nonatomic, weak)IBOutlet UIImageView *imageView;
+@property(nonatomic, weak)IBOutlet UIView *topToolbar;
+@property(nonatomic, weak)IBOutlet UIView *bottomToolbar;
+
 @property(nonatomic, strong)UIColor *paintColor;
 
 - (void)initViewComponent;
 - (CGContextRef)getPaintContext;
+- (void)showToolbar:(BOOL)isShow;
+
+- (IBAction)close:(id)sender;
+- (IBAction)doPost:(id)sender;
 
 @end
 
@@ -52,6 +59,16 @@
     return context;
 }
 
+-(void)showToolbar:(BOOL)isShow
+{
+    CGFloat alpha = isShow? 1 : 0;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        _topToolbar.alpha = alpha;
+        _bottomToolbar.alpha = alpha;
+    }];
+}
+
 #pragma mark - getter & setter
 
 - (void)setImage:(UIImage *)image
@@ -82,6 +99,7 @@
     
     CGContextMoveToPoint(context, currentPoint.x, currentPoint.y);
     
+    [self showToolbar:NO];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -102,11 +120,26 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UIGraphicsEndImageContext();
+    [self showToolbar:YES];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UIGraphicsEndImageContext();
+    [self showToolbar:YES];
 }
+
+#pragma mark - Action
+
+- (void)close:(id)sender
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (void)doPost:(id)sender
+{
+    
+}
+
 
 @end

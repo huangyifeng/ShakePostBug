@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C1A9B8F4-2F70-4E2D-9E2D-1EF2D66F9B2A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ShakePostBug</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>84829B424D1E7232E7FE7DF75D68723B5458A26C</key>
+		<string>https://github.com/huangyifeng/ShakePostBug.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ShakePostBug.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>84829B424D1E7232E7FE7DF75D68723B5458A26C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/huangyifeng/ShakePostBug.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>84829B424D1E7232E7FE7DF75D68723B5458A26C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>84829B424D1E7232E7FE7DF75D68723B5458A26C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ShakePostBug</string>
+		</dict>
+	</array>
+</dict>
+</plist>
