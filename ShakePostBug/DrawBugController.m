@@ -8,6 +8,9 @@
 
 #import "DrawBugController.h"
 
+CGFloat const SHAKE_POST_TEXT_VIEW_HEIGHT = 180;
+CGFloat const SHAKE_POST_TEXT_VIEW_PADDING = 10;
+
 @interface DrawBugController ()
 
 //@property(nonatomic, strong)
@@ -16,6 +19,7 @@
 @property(nonatomic, weak)IBOutlet UIView *topToolbar;
 @property(nonatomic, weak)IBOutlet UIView *bottomToolbar;
 @property(nonatomic, weak)IBOutlet NSLayoutConstraint *bottomToolbarBottomConstraint;
+@property(nonatomic, strong)UITextView *textView;
 
 @property(nonatomic, assign)BOOL        isTexting;
 @property(nonatomic, strong)NSArray     *colors;
@@ -26,6 +30,10 @@
 - (CGContextRef)getPaintContext;
 - (void)showToolbar:(BOOL)isShow;
 - (void)showBottomToolbar:(BOOL)isShow completion:(void(^)(BOOL finished))completion;
+- (void)showTextView;
+- (void)hideTextView;
+- (void)refreshColorButtonTint;
+
 
 - (IBAction)close:(id)sender;
 - (IBAction)doPost:(id)sender;
@@ -62,7 +70,8 @@
                [UIColor whiteColor], nil];
     
     [self refreshColorButtonTint];
-//    _lastPoint = CGPointZero;
+    
+    _isTexting = NO;
 }
 
 - (CGContextRef)getPaintContext
@@ -90,16 +99,53 @@
     CGFloat distance = isShow ? 0 : -_bottomToolbar.bounds.size.height;
     _bottomToolbarBottomConstraint.constant = distance;
     
-    [UIView animateWithDuration:1 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];
     } completion:^(BOOL finished) {
-        completion(finished);
+        if (completion)
+        {
+            completion(finished);
+        }
     }];
 }
 
 - (void)refreshColorButtonTint
 {
     self.colorButton.tintColor = [_colors objectAtIndex:_selectedColorIndex];
+}
+
+- (void)showTextView
+{
+    CGRect outterFrame = self.view.frame;
+    
+    CGRect frame = CGRectMake(SHAKE_POST_TEXT_VIEW_PADDING, -SHAKE_POST_TEXT_VIEW_HEIGHT , CGRectGetWidth(outterFrame) - 2 * SHAKE_POST_TEXT_VIEW_PADDING, SHAKE_POST_TEXT_VIEW_HEIGHT);
+    self.textView.frame = frame;
+    
+    [self.view insertSubview:self.textView aboveSubview:_imageView];
+    [self.textView becomeFirstResponder];
+    
+    frame.origin.y = CGRectGetHeight(_topToolbar.bounds) + SHAKE_POST_TEXT_VIEW_PADDING;
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        self.textView.frame = frame;
+    } completion:^(BOOL finished) {
+        _isTexting = YES;
+    }];
+}
+
+- (void)hideTextView
+{
+    CGRect outterFrame = self.view.frame;
+    CGRect frame = CGRectMake(SHAKE_POST_TEXT_VIEW_PADDING, -SHAKE_POST_TEXT_VIEW_HEIGHT , CGRectGetWidth(outterFrame) - 2 * SHAKE_POST_TEXT_VIEW_PADDING, SHAKE_POST_TEXT_VIEW_HEIGHT);
+
+    [self.textView resignFirstResponder];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.textView.frame = frame;
+    } completion:^(BOOL finished) {
+        [self.textView removeFromSuperview];
+        _isTexting = NO;
+        [self showBottomToolbar:YES completion:nil];
+    }];
 }
 
 
@@ -124,43 +170,62 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UIGraphicsBeginImageContext(_imageView.bounds.size);
-    
-    UITouch *touch = [touches anyObject];
-    CGPoint currentPoint = [touch locationInView:_imageView];
-    CGContextRef context = [self getPaintContext];
-    [_imageView.layer renderInContext:context];
-    
-    CGContextMoveToPoint(context, currentPoint.x, currentPoint.y);
-    
-    [self showToolbar:NO];
+    if (!_isTexting)
+    {
+        UIGraphicsBeginImageContext(_imageView.bounds.size);
+        
+        UITouch *touch = [touches anyObject];
+        CGPoint currentPoint = [touch locationInView:_imageView];
+        CGContextRef context = [self getPaintContext];
+        [_imageView.layer renderInContext:context];
+        
+        CGContextMoveToPoint(context, currentPoint.x, currentPoint.y);
+        
+        [self showToolbar:NO];
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    CGContextRef context = [self getPaintContext];
-    UITouch *touch = [touches anyObject];
-    CGPoint currentPoint = [touch locationInView:_imageView];
-//    NSLog(@"touchesMoved, %@",NSStringFromCGPoint(currentPoint));
-    
-    CGContextAddLineToPoint(context, currentPoint.x, currentPoint.y);
-    CGContextStrokePath(context);
-    
-    CGContextMoveToPoint(context, currentPoint.x, currentPoint.y);
-    
-    _imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    if (!_isTexting)
+    {
+        CGContextRef context = [self getPaintContext];
+        UITouch *touch = [touches anyObject];
+        CGPoint currentPoint = [touch locationInView:_imageView];
+        
+        CGContextAddLineToPoint(context, currentPoint.x, currentPoint.y);
+        CGContextStrokePath(context);
+        
+        CGContextMoveToPoint(context, currentPoint.x, currentPoint.y);
+        
+        _imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UIGraphicsEndImageContext();
-    [self showToolbar:YES];
+    if (_isTexting)
+    {
+        [self hideTextView];
+    }
+    else
+    {
+        UIGraphicsEndImageContext();
+        [self showToolbar:YES];
+    }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UIGraphicsEndImageContext();
-    [self showToolbar:YES];
+    if (_isTexting)
+    {
+        [self hideTextView];
+    }
+    else
+    {
+        UIGraphicsEndImageContext();
+        [self showToolbar:YES];
+    }
 }
 
 #pragma mark - Action
@@ -183,13 +248,27 @@
 - (IBAction)textBtnHandler:(id)sender
 {
     [self showBottomToolbar:NO completion:^(BOOL finished) {
-        
+        [self showTextView];
     }];
 }
 
 - (IBAction)clearBtnHandler:(id)sender
 {
     _imageView.image = _image;
+}
+
+#pragma mark - getter & setter
+
+- (UITextView *)textView
+{
+    if (!_textView) {
+        _textView = [[UITextView alloc] init];
+        _textView.layer.cornerRadius = 10;
+        _textView.layer.borderWidth = 1;
+        _textView.layer.borderColor = [UIColor grayColor].CGColor;
+        _textView.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    }
+    return _textView;
 }
 
 #pragma mark - status bar
