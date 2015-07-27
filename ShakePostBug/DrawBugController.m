@@ -10,19 +10,28 @@
 
 @interface DrawBugController ()
 
-//@property(nonatomic, assign)CGPoint lastPoint;
+//@property(nonatomic, strong)
+@property(nonatomic, weak)IBOutlet UIButton *colorButton;
 @property(nonatomic, weak)IBOutlet UIImageView *imageView;
 @property(nonatomic, weak)IBOutlet UIView *topToolbar;
 @property(nonatomic, weak)IBOutlet UIView *bottomToolbar;
+@property(nonatomic, weak)IBOutlet NSLayoutConstraint *bottomToolbarBottomConstraint;
 
-@property(nonatomic, strong)UIColor *paintColor;
+@property(nonatomic, assign)BOOL        isTexting;
+@property(nonatomic, strong)NSArray     *colors;
+@property(nonatomic, assign)NSInteger   selectedColorIndex;
+@property(nonatomic, strong)NSString    *bugText;
 
 - (void)initViewComponent;
 - (CGContextRef)getPaintContext;
 - (void)showToolbar:(BOOL)isShow;
+- (void)showBottomToolbar:(BOOL)isShow completion:(void(^)(BOOL finished))completion;
 
 - (IBAction)close:(id)sender;
 - (IBAction)doPost:(id)sender;
+- (IBAction)colorBtnHandler:(id)sender;
+- (IBAction)textBtnHandler:(id)sender;
+- (IBAction)clearBtnHandler:(id)sender;
 
 @end
 
@@ -44,7 +53,15 @@
 - (void)initViewComponent
 {
     _imageView.image = _image;
-    _paintColor = [UIColor redColor];
+    _selectedColorIndex = 0;
+    _colors = [NSArray arrayWithObjects:[UIColor redColor],
+               [UIColor blueColor],
+               [UIColor yellowColor],
+               [UIColor orangeColor],
+               [UIColor greenColor],
+               [UIColor whiteColor], nil];
+    
+    [self refreshColorButtonTint];
 //    _lastPoint = CGPointZero;
 }
 
@@ -53,9 +70,8 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextSetLineWidth(context, 2);
-    CGContextSetStrokeColorWithColor(context, _paintColor.CGColor);
+    CGContextSetStrokeColorWithColor(context, [(UIColor *)[_colors objectAtIndex:_selectedColorIndex] CGColor]);
     CGContextSetBlendMode(context, kCGBlendModeNormal);
-    
     return context;
 }
 
@@ -68,6 +84,24 @@
         _bottomToolbar.alpha = alpha;
     }];
 }
+
+- (void)showBottomToolbar:(BOOL)isShow completion:(void(^)(BOOL finished))completion
+{
+    CGFloat distance = isShow ? 0 : -_bottomToolbar.bounds.size.height;
+    _bottomToolbarBottomConstraint.constant = distance;
+    
+    [UIView animateWithDuration:1 animations:^{
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        completion(finished);
+    }];
+}
+
+- (void)refreshColorButtonTint
+{
+    self.colorButton.tintColor = [_colors objectAtIndex:_selectedColorIndex];
+}
+
 
 #pragma mark - getter & setter
 
@@ -141,5 +175,28 @@
     
 }
 
+- (IBAction)colorBtnHandler:(id)sender
+{
+    
+}
+
+- (IBAction)textBtnHandler:(id)sender
+{
+    [self showBottomToolbar:NO completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (IBAction)clearBtnHandler:(id)sender
+{
+    _imageView.image = _image;
+}
+
+#pragma mark - status bar
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 @end
