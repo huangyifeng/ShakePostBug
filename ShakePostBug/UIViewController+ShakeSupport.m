@@ -19,17 +19,13 @@
     return YES;
 }
 
-#pragma mark - public 
-
-
-
 #pragma mark - motion event
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (motion == UIEventSubtypeMotionShake && self.isShakingEnabled)
     {
-        NSLog(@"shake began");
+        NSLog(@"shake began -- %@",[[NSRunLoop currentRunLoop] currentMode]);
         self.shakingTimer = [NSTimer scheduledTimerWithTimeInterval:self.shakeDuration target:self selector:@selector(shakeTimerHandler:) userInfo:nil repeats:NO];
     }
 }
@@ -47,7 +43,7 @@
 {
     if (motion == UIEventSubtypeMotionShake && self.isShakingEnabled)
     {
-        [self.shakingTimer invalidate];
+//        [self.shakingTimer invalidate];
         NSLog(@"shake cancelled");
     }
 }
@@ -56,7 +52,10 @@
 
 - (void)shakeTimerHandler:(NSTimer *)timer
 {
-    
+    if (self.actionHandler)
+    {
+        self.actionHandler();
+    }
 }
 
 #pragma mark - getter & setter
@@ -91,6 +90,16 @@
 - (void)setShakingTimer:(NSTimer *)shakingTimer
 {
     return objc_setAssociatedObject(self, @"shakingTimer", shakingTimer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void (^)(void))actionHandler
+{
+    return objc_getAssociatedObject(self, @"shakeActionHandler");
+}
+
+- (void)setActionHandler:(void (^)(void))actionHandler
+{
+    objc_setAssociatedObject(self, @"shakeActionHandler", actionHandler, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 @end

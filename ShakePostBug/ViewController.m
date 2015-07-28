@@ -30,21 +30,35 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.isShakingEnabled = YES;
+    self.shakeDuration = 1;
+    UIView *selfView = self.view;
+    self.actionHandler = ^(){
+        DrawBugController *drawBug = [[DrawBugController alloc] init];
+        
+        UIGraphicsBeginImageContext(selfView.bounds.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        [selfView.window.layer renderInContext:context];
+        drawBug.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        [selfView.window.rootViewController presentViewController:drawBug animated:NO completion:nil];
+    };
 }
 
 #pragma mark - Action
 
 - (void)shotHandler:(id)sender
 {
-    DrawBugController *drawBug = [[DrawBugController alloc] init];
-    
-    UIGraphicsBeginImageContext(self.view.bounds.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self.view.window.layer renderInContext:context];
-    drawBug.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    [self presentViewController:drawBug animated:NO completion:nil];
+//    DrawBugController *drawBug = [[DrawBugController alloc] init];
+//    
+//    UIGraphicsBeginImageContext(self.view.bounds.size);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    [self.view.window.layer renderInContext:context];
+//    drawBug.image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    [self presentViewController:drawBug animated:NO completion:nil];
 }
 
 @end
