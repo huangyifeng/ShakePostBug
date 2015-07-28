@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BBB889FB1B62146800354171 /* DrawBugController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB889FA1B62146800354171 /* DrawBugController.m */; };
 		BBB889FD1B6219A100354171 /* DrawBugController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB889FC1B6219A100354171 /* DrawBugController.xib */; };
+		BBFDD86C1B672D7300EE359C /* DrawBugColorSeletor.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFDD86B1B672D7300EE359C /* DrawBugColorSeletor.m */; };
 		C446AB1F1B457CEA00DCD414 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB1E1B457CEA00DCD414 /* main.m */; };
 		C446AB221B457CEA00DCD414 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB211B457CEA00DCD414 /* AppDelegate.m */; };
 		C446AB251B457CEA00DCD414 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB241B457CEA00DCD414 /* ViewController.m */; };
@@ -33,6 +34,8 @@
 		BBB889F91B62146800354171 /* DrawBugController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBugController.h; sourceTree = "<group>"; };
 		BBB889FA1B62146800354171 /* DrawBugController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBugController.m; sourceTree = "<group>"; };
 		BBB889FC1B6219A100354171 /* DrawBugController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawBugController.xib; sourceTree = "<group>"; };
+		BBFDD86A1B672D7300EE359C /* DrawBugColorSeletor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBugColorSeletor.h; sourceTree = "<group>"; };
+		BBFDD86B1B672D7300EE359C /* DrawBugColorSeletor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBugColorSeletor.m; sourceTree = "<group>"; };
 		C446AB191B457CEA00DCD414 /* ShakePostBug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakePostBug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C446AB1D1B457CEA00DCD414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C446AB1E1B457CEA00DCD414 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 		C446AB421B4598F300DCD414 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				BBFDD86A1B672D7300EE359C /* DrawBugColorSeletor.h */,
+				BBFDD86B1B672D7300EE359C /* DrawBugColorSeletor.m */,
 				C446AB431B459B9B00DCD414 /* UIViewController+ShakeSupport.h */,
 				C446AB441B459B9B00DCD414 /* UIViewController+ShakeSupport.m */,
 				BBB889F91B62146800354171 /* DrawBugController.h */,
@@ -242,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C446AB251B457CEA00DCD414 /* ViewController.m in Sources */,
+				BBFDD86C1B672D7300EE359C /* DrawBugColorSeletor.m in Sources */,
 				C446AB221B457CEA00DCD414 /* AppDelegate.m in Sources */,
 				C446AB1F1B457CEA00DCD414 /* main.m in Sources */,
 				BBB889FB1B62146800354171 /* DrawBugController.m in Sources */,

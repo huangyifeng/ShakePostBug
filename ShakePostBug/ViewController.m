@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "DrawBugController.h"
+#import "UIViewController+ShakeSupport.h"
 
 @interface ViewController ()
 

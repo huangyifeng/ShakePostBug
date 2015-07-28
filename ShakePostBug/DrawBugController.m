@@ -7,9 +7,12 @@
 //
 
 #import "DrawBugController.h"
+#import "DrawBugColorSeletor.h"
 
 CGFloat const SHAKE_POST_TEXT_VIEW_HEIGHT = 180;
 CGFloat const SHAKE_POST_TEXT_VIEW_PADDING = 10;
+CGFloat const SHAKE_POST_COLOR_SELECTOR_HEIGHT = 50;;
+CGFloat const SHAKE_POST_COLOR_SELECTOR_PADDING = 10;;
 
 @interface DrawBugController ()
 
@@ -20,6 +23,7 @@ CGFloat const SHAKE_POST_TEXT_VIEW_PADDING = 10;
 @property(nonatomic, weak)IBOutlet UIView *bottomToolbar;
 @property(nonatomic, weak)IBOutlet NSLayoutConstraint *bottomToolbarBottomConstraint;
 @property(nonatomic, strong)UITextView *textView;
+@property(nonatomic, strong)DrawBugColorSeletor *colorSelector;
 
 @property(nonatomic, assign)BOOL        isTexting;
 @property(nonatomic, strong)NSArray     *colors;
@@ -32,6 +36,10 @@ CGFloat const SHAKE_POST_TEXT_VIEW_PADDING = 10;
 - (void)showBottomToolbar:(BOOL)isShow completion:(void(^)(BOOL finished))completion;
 - (void)showTextView;
 - (void)hideTextView;
+
+- (void)showColorSelector;
+- (void)hideColorSelector;
+
 - (void)refreshColorButtonTint;
 
 
@@ -98,6 +106,7 @@ CGFloat const SHAKE_POST_TEXT_VIEW_PADDING = 10;
 {
     CGFloat distance = isShow ? 0 : -_bottomToolbar.bounds.size.height;
     _bottomToolbarBottomConstraint.constant = distance;
+    [self hideColorSelector];
     
     [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];
@@ -148,18 +157,29 @@ CGFloat const SHAKE_POST_TEXT_VIEW_PADDING = 10;
     }];
 }
 
-
-#pragma mark - getter & setter
-
-- (void)setImage:(UIImage *)image
+- (void)showColorSelector
 {
-    if (_image == image)
-    {
-        return;
-    }
-    _image = image;
-    _imageView.image = image;
+    self.colorSelector.alpha = 0;
+    [self.view addSubview:self.colorSelector];
+    
+    CGFloat y = CGRectGetMinY(_bottomToolbar.frame) - SHAKE_POST_COLOR_SELECTOR_PADDING - SHAKE_POST_COLOR_SELECTOR_HEIGHT;
+    CGFloat width = CGRectGetWidth(self.view.frame) - 2 * SHAKE_POST_COLOR_SELECTOR_PADDING;
+    self.colorSelector.frame = CGRectMake(SHAKE_POST_COLOR_SELECTOR_PADDING, y, width, SHAKE_POST_COLOR_SELECTOR_HEIGHT);
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.colorSelector.alpha = 1.0;
+    }];
 }
+
+- (void)hideColorSelector
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.colorSelector.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self.colorSelector removeFromSuperview];
+    }];
+}
+
 
 #pragma mark - Responder
 
@@ -189,6 +209,8 @@ CGFloat const SHAKE_POST_TEXT_VIEW_PADDING = 10;
 {
     if (!_isTexting)
     {
+        [self hideColorSelector];
+        
         CGContextRef context = [self getPaintContext];
         UITouch *touch = [touches anyObject];
         CGPoint currentPoint = [touch locationInView:_imageView];
@@ -242,7 +264,7 @@ CGFloat const SHAKE_POST_TEXT_VIEW_PADDING = 10;
 
 - (IBAction)colorBtnHandler:(id)sender
 {
-    
+    [self showColorSelector];
 }
 
 - (IBAction)textBtnHandler:(id)sender
@@ -259,6 +281,16 @@ CGFloat const SHAKE_POST_TEXT_VIEW_PADDING = 10;
 
 #pragma mark - getter & setter
 
+- (void)setImage:(UIImage *)image
+{
+    if (_image == image)
+    {
+        return;
+    }
+    _image = image;
+    _imageView.image = image;
+}
+
 - (UITextView *)textView
 {
     if (!_textView) {
@@ -269,6 +301,26 @@ CGFloat const SHAKE_POST_TEXT_VIEW_PADDING = 10;
         _textView.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10);
     }
     return _textView;
+}
+
+- (DrawBugColorSeletor *)colorSelector
+{
+    if (!_colorSelector)
+    {
+        _colorSelector = [[DrawBugColorSeletor alloc] initWithColorList:_colors];
+        _colorSelector.layer.cornerRadius = 5;
+        _colorSelector.backgroundColor = [UIColor darkGrayColor];
+        _colorSelector.delegate = self;
+    }
+    return _colorSelector;
+}
+
+#pragma mark - DrawBugColorSeletorDelegate
+
+- (void)selectColor:(UIColor *)selectedColor
+{
+    _selectedColorIndex = [_colors indexOfObject:selectedColor];
+    [self refreshColorButtonTint];
 }
 
 #pragma mark - status bar

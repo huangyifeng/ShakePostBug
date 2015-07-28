@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DrawBugColorSeletor.h"
 
-@interface DrawBugController : UIViewController
+@interface DrawBugController : UIViewController <DrawBugColorSeletorDelegate>
 
 @property(nonatomic, strong)UIImage *image;
 

@@ -10,7 +10,13 @@
 
 @interface UIViewController (ShakeSupport)
 
+@property(nonatomic, assign)BOOL isShakingEnabled;
+@property(nonatomic, assign)NSTimeInterval shakeDuration;
+
+@property(nonatomic, strong)NSTimer *shakingTimer;
+
 - (void)setShakeHandler:(void(^)(void))actionHandler;
 
+- (void)shakeTimerHandler:(NSTimer *)timer;
 
 @end
