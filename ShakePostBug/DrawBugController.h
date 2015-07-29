@@ -12,5 +12,6 @@
 @interface DrawBugController : UIViewController <DrawBugColorSeletorDelegate>
 
 @property(nonatomic, strong)UIImage *image;
+@property(nonatomic, strong)void(^sendAction)(NSData *, NSString *);
 
 @end

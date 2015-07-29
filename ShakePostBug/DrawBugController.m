@@ -259,7 +259,12 @@ CGFloat const SHAKE_POST_COLOR_SELECTOR_PADDING = 10;;
 
 - (void)doPost:(id)sender
 {
-    
+    if (_sendAction)
+    {
+        NSData *imageData = UIImagePNGRepresentation(_imageView.image);
+        NSString *text = self.textView.text;
+        _sendAction(imageData, text);
+    }
 }
 
 - (IBAction)colorBtnHandler:(id)sender
