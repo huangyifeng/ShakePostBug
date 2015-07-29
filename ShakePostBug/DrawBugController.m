@@ -192,7 +192,7 @@ CGFloat const SHAKE_POST_COLOR_SELECTOR_PADDING = 10;;
 {
     if (!_isTexting)
     {
-        UIGraphicsBeginImageContext(_imageView.bounds.size);
+        UIGraphicsBeginImageContextWithOptions(_imageView.bounds.size, NO, 0);
         
         UITouch *touch = [touches anyObject];
         CGPoint currentPoint = [touch locationInView:_imageView];
@@ -264,7 +264,14 @@ CGFloat const SHAKE_POST_COLOR_SELECTOR_PADDING = 10;;
 
 - (IBAction)colorBtnHandler:(id)sender
 {
-    [self showColorSelector];
+    if (self.colorSelector.window)
+    {
+        [self hideColorSelector];
+    }
+    else
+    {
+        [self showColorSelector];
+    }
 }
 
 - (IBAction)textBtnHandler:(id)sender

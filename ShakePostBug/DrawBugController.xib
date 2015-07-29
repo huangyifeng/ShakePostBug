@@ -22,7 +22,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iaM-UH-Ar9">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ND0-Lr-rgr" userLabel="topToolbar">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ND0-Lr-rgr" userLabel="topToolbar" customClass="UIControl">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wT3-Ei-0kc">
@@ -75,7 +75,7 @@
                         <constraint firstItem="wT3-Ei-0kc" firstAttribute="leading" secondItem="ND0-Lr-rgr" secondAttribute="leading" constant="20" id="z2l-hD-ZYe"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0R-g1-3g7" userLabel="bottomToolbar">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0R-g1-3g7" userLabel="bottomToolbar" customClass="UIControl">
                     <rect key="frame" x="0.0" y="559" width="600" height="41"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC3-iu-57w">

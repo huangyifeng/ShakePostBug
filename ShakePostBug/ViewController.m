@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "DrawBugController.h"
 #import "UIViewController+ShakeSupport.h"
+#import "UIView+Utility.h"
 
 @interface ViewController ()
 
@@ -35,8 +36,8 @@
     UIView *selfView = self.view;
     self.actionHandler = ^(){
         DrawBugController *drawBug = [[DrawBugController alloc] init];
-        
-        UIGraphicsBeginImageContext(selfView.bounds.size);
+
+        UIGraphicsBeginImageContextWithOptions(selfView.bounds.size, NO, 0);
         CGContextRef context = UIGraphicsGetCurrentContext();
         [selfView.window.layer renderInContext:context];
         drawBug.image = UIGraphicsGetImageFromCurrentImageContext();
