@@ -18,6 +18,7 @@
 		C446AB2D1B457CEA00DCD414 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C446AB2B1B457CEA00DCD414 /* LaunchScreen.xib */; };
 		C446AB391B457CEA00DCD414 /* ShakePostBugTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB381B457CEA00DCD414 /* ShakePostBugTests.m */; };
 		C446AB451B459B9B00DCD414 /* UIViewController+ShakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C446AB441B459B9B00DCD414 /* UIViewController+ShakeSupport.m */; };
+		C4C5A6131B6A51BE008FFDF1 /* ShakeSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5A6121B6A51BE008FFDF1 /* ShakeSupportViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		C446AB381B457CEA00DCD414 /* ShakePostBugTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShakePostBugTests.m; sourceTree = "<group>"; };
 		C446AB431B459B9B00DCD414 /* UIViewController+ShakeSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ShakeSupport.h"; sourceTree = "<group>"; };
 		C446AB441B459B9B00DCD414 /* UIViewController+ShakeSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ShakeSupport.m"; sourceTree = "<group>"; };
+		C4C5A6111B6A51BE008FFDF1 /* ShakeSupportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeSupportViewController.h; sourceTree = "<group>"; };
+		C4C5A6121B6A51BE008FFDF1 /* ShakeSupportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeSupportViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				BBFDD86B1B672D7300EE359C /* DrawBugColorSeletor.m */,
 				C446AB431B459B9B00DCD414 /* UIViewController+ShakeSupport.h */,
 				C446AB441B459B9B00DCD414 /* UIViewController+ShakeSupport.m */,
+				C4C5A6111B6A51BE008FFDF1 /* ShakeSupportViewController.h */,
+				C4C5A6121B6A51BE008FFDF1 /* ShakeSupportViewController.m */,
 				BBB889F91B62146800354171 /* DrawBugController.h */,
 				BBB889FA1B62146800354171 /* DrawBugController.m */,
 				BBB889FC1B6219A100354171 /* DrawBugController.xib */,
@@ -251,6 +256,7 @@
 				C446AB221B457CEA00DCD414 /* AppDelegate.m in Sources */,
 				C446AB1F1B457CEA00DCD414 /* main.m in Sources */,
 				BBB889FB1B62146800354171 /* DrawBugController.m in Sources */,
+				C4C5A6131B6A51BE008FFDF1 /* ShakeSupportViewController.m in Sources */,
 				C446AB451B459B9B00DCD414 /* UIViewController+ShakeSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ShakePostBug/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -388,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ShakePostBug/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

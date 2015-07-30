@@ -307,6 +307,7 @@ CGFloat const SHAKE_POST_COLOR_SELECTOR_PADDING = 10;;
 {
     if (!_textView) {
         _textView = [[UITextView alloc] init];
+        _textView.font = [UIFont systemFontOfSize:20];
         _textView.layer.cornerRadius = 10;
         _textView.layer.borderWidth = 1;
         _textView.layer.borderColor = [UIColor grayColor].CGColor;

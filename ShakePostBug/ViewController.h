@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShakeSupportViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : ShakeSupportViewController
 
 
 @end

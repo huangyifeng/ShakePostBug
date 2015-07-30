@@ -28,6 +28,10 @@
         NSLog(@"shake began -- %@",[[NSRunLoop currentRunLoop] currentMode]);
         self.shakingTimer = [NSTimer scheduledTimerWithTimeInterval:self.shakeDuration target:self selector:@selector(shakeTimerHandler:) userInfo:nil repeats:NO];
     }
+    else
+    {
+        [self.nextResponder motionBegan:motion withEvent:event];
+    }
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
@@ -37,6 +41,10 @@
         [self.shakingTimer invalidate];
         NSLog(@"shake ended");
     }
+    else
+    {
+        [self.nextResponder motionEnded:motion withEvent:event];
+    }
 }
 
 - (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event
@@ -45,6 +53,10 @@
     {
 //        [self.shakingTimer invalidate];
         NSLog(@"shake cancelled");
+    }
+    else
+    {
+        [self.nextResponder motionCancelled:motion withEvent:event];
     }
 }
 
